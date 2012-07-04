@@ -1,5 +1,5 @@
-(ns mam-playground.test.world
-  (:use mam-playground.world
+(ns mam.test.data.world
+  (:use mam.data.world
         midje.sweet))
 
 (fact "The current room the player is in can be found"

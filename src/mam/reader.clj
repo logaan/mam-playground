@@ -1,6 +1,6 @@
 ; Note: Feels like object and action are each doing too much
-(ns mam-playground.reader
-  (:use [mam-playground world]
+(ns mam.reader
+  (:use mam.data.world
         [clojure.string :only [split]]))
 
 (defn words [input]

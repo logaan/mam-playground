@@ -1,4 +1,4 @@
-(ns mam-playground.containers)
+(ns mam.containers)
 
 (defn pull [container object]
   (update-in container [:inventory] #(disj % object)))

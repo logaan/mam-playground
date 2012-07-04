@@ -1,11 +1,12 @@
-(ns mam-playground.test.reader
-  (:use [mam-playground reader constructors]
+(ns mam.test.reader
+  (:use [mam.data player room artifact]
+        mam.reader
         midje.sweet))
 
 
 (fact "User input can be converted to actual objects"
   (object "take the key"
-          {:player (pc [1,1] #{})
+          {:player (player [1,1] #{})
            :rooms  {[1,1] (room #{(artifact "key")})}})
   => (artifact "key"))
 

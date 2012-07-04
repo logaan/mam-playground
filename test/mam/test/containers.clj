@@ -1,5 +1,5 @@
-(ns mam-playground.test.containers
-  (:use mam-playground.containers
+(ns mam.test.containers
+  (:use mam.containers
         midje.sweet))
 
 (fact "Posessions can be moved from one container to another"

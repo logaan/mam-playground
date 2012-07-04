@@ -5,9 +5,9 @@
 ;;            [new-state output] (process-events event-processor/main state events)]
 ;;        (println output)
 ;;        (recur new-state)))
-(ns mam-playground.core
-  (:use midje.sweet
-        [mam-playground constructors containers world reader]))
+(ns mam.core
+  (:use [mam containers reader]
+        [mam.data artifact character player room world]))
 
 (defn do-command [input world]
   ((action input (object input world)) world))
