@@ -4,3 +4,4 @@
   {:name      name
    :inventory inventory
    :speak     (fn [world] (str "Hi I'm " name))})
+

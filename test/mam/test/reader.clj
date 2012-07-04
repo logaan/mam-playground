@@ -3,7 +3,6 @@
         mam.reader
         midje.sweet))
 
-
 (fact "User input can be converted to actual objects"
   (object "take the key"
           {:player (player [1,1] #{})
@@ -13,3 +12,4 @@
 
 (fact "Peter speaks"
   (action "converse with peter" {:speak "Hi"}) => "Hi")
+

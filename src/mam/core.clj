@@ -5,6 +5,7 @@
 ;;            [new-state output] (process-events event-processor/main state events)]
 ;;        (println output)
 ;;        (recur new-state)))
+;;
 (ns mam.core
   (:use [mam containers reader]
         [mam.data artifact character player room world]))

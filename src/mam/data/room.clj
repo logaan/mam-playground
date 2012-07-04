@@ -2,3 +2,4 @@
 
 (defn room [inventory]
   {:inventory inventory})
+

@@ -2,3 +2,4 @@
 
 (defn artifact [name]
   {:name name})
+

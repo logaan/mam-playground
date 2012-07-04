@@ -3,3 +3,4 @@
 (defn player [position inventory]
   {:position  position
    :inventory inventory})
+
