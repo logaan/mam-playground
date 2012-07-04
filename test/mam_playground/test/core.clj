@@ -29,3 +29,4 @@
                :rooms  {[1,1] (room #{(npc "Peter" #{(artifact "key")})
                                       (artifact "candle")})}})
   => "Hi I'm Peter")
+
