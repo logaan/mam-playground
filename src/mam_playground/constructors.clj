@@ -1,3 +1,6 @@
+;; If you found yourself with a set of functions that apply onto the pcs, npcs,
+;; rooms or artifacts then you'd shift the constructor and those functions off
+;; into their own ns.
 (ns mam-playground.constructors)
 
 (defn pc [position inventory]
