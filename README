@@ -3,6 +3,19 @@
 Playing around with how to architect a text based adventure like
 https://github.com/buntine/Medieval-Alien-Massacre
 
+## Goal
+
+- Try to move north
+  - "This door needs a key"
+- Speak to person
+  - "I'll trade you a candle for a key"
+- Pick up candle
+- Trade candle for key
+- Speak to person
+  - "Candles make great dildos"
+- Move north
+  - "Your key unlocked the door"
+
 ## License
 
 Copyright (C) 2012

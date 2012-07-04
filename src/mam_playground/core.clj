@@ -1,19 +1,14 @@
+;; The way this is heading it looks like we'll have something like:
+;;
+;;    (defn game-loop [state]
+;;      (let [events             (read-input (prompt-user))
+;;            [new-state output] (process-events event-processor/main state events)]
+;;        (println output)
+;;        (recur new-state)))
 (ns mam-playground.core
   (:use midje.sweet
         [mam-playground constructors containers world reader]))
 
 (defn do-command [input world]
   ((action input (object input world)) world))
-
-; Aim to implement:
-; - Try to move north
-;   - "This door needs a key"
-; - Speak to person
-;   - "I'll trade you a candle for a key"
-; - Pick up candle
-; - Trade candle for key
-; - Speak to person
-;   - "Candles make great dildos"
-; - Move north
-;   - "Your key unlocked the door"
 
