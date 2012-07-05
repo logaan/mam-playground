@@ -1,10 +1,20 @@
-;; The event processing system is a way of making it clean and easy to add
-;; actions to events. A chain of events will be started by the user. As each
-;; events is processed it may add its own events to the queue.
+;; The event system is a way of untangling events and actions. This allows us
+;; to have multiple user inputs trigger the same event (typing 'n' is the same
+;; as typing 'north'). Events may have several pieces of code listening out for
+;; them, usefully one of these listeners may be sensible default behavior
+;; (moving through door vs moving into wall).
 ;;
-;; Listeners can be quite clever about whether they should handle an events,
-;; in mam I intend to use matchure to filter out events. But any kind of
-;; function that can handle state and an event can be used to process them.
+;; Events (maps) are stored in a queue (a vector). The `event-handler` is one
+;; function that is passed to `event-loop`. The `event-handler` will be called
+;; with a `state` object and a single `event`.
+;;
+;; An event may be triggered by a user. Further events may be added to the
+;; queue by the `event-handler`.
+;;
+;; I expect the `event-handler` will be a function that is composed of many
+;; other functions. You can think of these smaller functions as individual
+;; event listeners. They individually decide whether they want to transform the
+;; state or add more events to the queue.
 ;;
 ;; An example:
 ;;
@@ -34,8 +44,8 @@
 (defn event [type & {:as data}]
   (assoc data :event type))
 
-(defn event-loop [process-event state [event & pending-events]]
+(defn event-loop [event-handler state [event & event-queue]]
   (if (nil? event) state
-    (let [[new-state new-events] (process-event state event)]
-      (recur process-event new-state (concat new-events pending-events)))))
+    (let [[new-state new-events] (event-handler state event)]
+      (recur event-handler new-state (concat new-events event-queue)))))
 
